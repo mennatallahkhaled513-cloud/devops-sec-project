@@ -1,0 +1,33 @@
+# General Settings
+namespace: db-ns
+image: postgres:15
+
+# Database Credentials
+dbName: "mydb"
+dbUser: "admin"
+dbPassword: "password123"
+
+# Storage Configuration
+storageClassName: "my-custom-db-storage"
+storageSize: "1Gi"
+hostPath: "/data/db-storage"
+
+# Resource Limits
+resources:
+  requests:
+    cpu: "20m"
+    memory: "64Mi"
+  limits:
+    cpu: "50m"
+    memory: "128Mi"
+
+# Quota Settings
+quota:
+  pods: "5"
+  requestsCpu: "500m"
+  requestsMemory: "512Mi"
+  limitsCpu: "1"
+  limitsMemory: "1Gi"
+
+# Network Policy Settings
+backendNamespace: "backend-ns"
